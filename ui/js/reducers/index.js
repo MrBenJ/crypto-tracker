@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
-import counter from './counterReducer';
-import auth from './authReducer';
-import heroData from './heroDataReducer';
-
+import coins from './coinReducer';
+import tracker from './trackerReducer';
+import prices from './priceReducer';
 const rootReducer = combineReducers({
-    counter,
-    auth,
-    heroData
+    coins,
+    tracker,
+    prices
 });
 
 export default rootReducer;

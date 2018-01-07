@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 
+import SideBarItem from 'components/SideBarItem';
 import { Text } from 'components/common';
 
 class SideBar extends Component {
@@ -19,6 +20,7 @@ class SideBar extends Component {
         const style = css`
             width: 20%;
             display: inline-block;
+            vertical-align: top;
 
         `;
 
@@ -33,6 +35,16 @@ class SideBar extends Component {
                     </Text>
                 </div>
             );
+        } else {
+            content = (
+                <div className="sidebar-items-container">
+                    {tracker.map( coin => {
+                        return (
+                            <SideBarItem key={coin} coin={coin} />
+                        )
+                    })}
+                </div>
+            )
         }
 
         return (

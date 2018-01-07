@@ -11,8 +11,8 @@ import { Provider } from 'react-redux';
 import App from 'js/components/App';
 
 import configureStore from 'js/store/configureStore';
-import rootApiSaga from 'js/sagas/authSaga';
-import heroDataSaga from 'js/sagas/heroDataSaga';
+import rootCoinSaga from 'js/sagas/coinSaga';
+import rootPriceSaga from 'js/sagas/priceSaga';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,5 +29,5 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
-sagaMiddleware.run(rootApiSaga);
-sagaMiddleware.run(heroDataSaga);
+sagaMiddleware.run(rootCoinSaga);
+sagaMiddleware.run(rootPriceSaga);
