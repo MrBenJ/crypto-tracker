@@ -1,0 +1,16 @@
+{
+    "presets": ['env'],
+    "plugins": [
+        'transform-react-jsx',
+        'syntax-flow',
+        ['emotion/babel', {inline: true}],
+        ['module-resolver', {
+            "root": ["./ui"],
+            "alias": {
+                "components": "js/components",
+                "style": "style",
+                "js": "js"
+            }
+        }]
+    ]
+}
