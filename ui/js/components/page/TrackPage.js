@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { Text } from 'components/common';
-import SideBar from 'components/SideBar';
 import CoinBadge from 'components/CoinBadge';
 import * as coinActions from 'js/actions/coinActions';
 import * as trackerActions from 'js/actions/trackerActions';

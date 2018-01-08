@@ -39,7 +39,8 @@ class SideBarItem extends Component {
     render() {
         const style = css`
             height: 5rem;
-
+            cursor: pointer;
+            transition: background-color .5s ease;
             &:hover {
                 background-color: lightgray;
             }
@@ -81,4 +82,5 @@ SideBarItem.propTypes = {
     onClick: PropTypes.func
 }
 
+export { SideBarItem };
 export default connect(mapStateToProps, mapDispatchToProps)(SideBarItem);
