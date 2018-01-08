@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "WTFPL",
   "scripts": {
-    "start": "node server.js",
-    "start:prod": "NODE_ENV=production node server.js",
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "prebuild": "jest",
     "build": "webpack --config webpack.config.prod.js",
-    "postbuild": "echo production build finished. Start production server with 'yarn start:prod'"
+    "postbuild": "echo production build finished. Start production server with 'yarn start'"
   },
   "jest": {
     "collectCoverage": true
