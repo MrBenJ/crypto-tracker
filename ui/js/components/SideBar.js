@@ -73,4 +73,5 @@ function mapStateToProps(state) {
     };
 }
 
+export { SideBar };
 export default connect(mapStateToProps)(SideBar);

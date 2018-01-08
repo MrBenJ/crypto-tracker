@@ -50,7 +50,7 @@ class MainWindow extends Component {
 
                 </div>
             );
-        } else if(this.props.view.name) {
+        } else if(this.props.view && this.props.view.name) {
             const { name, ticker, usd } = this.props.view;
             content = (
                 <div>
@@ -64,7 +64,7 @@ class MainWindow extends Component {
             );
         } else {
             content = (
-                <Text> Select a currency on the left to view information about it</Text>
+                <Text className="select-text"> Select a currency on the left to view information about it</Text>
             );
         }
 
@@ -108,9 +108,9 @@ class MainWindow extends Component {
                 if(this.chart) {this.chart.destroy(); }
                 this.chart = new Chart( ctx, chartData);
                 
-            }).catch (error => {
+            }).catch (() => {
                 // This is where I would handle the error...
-                console.error('something went wrong', error);
+                // console.error('something went wrong', error);
             });
         }
     }
@@ -132,6 +132,5 @@ function mapStateToProps(state) {
     };
 }
 
-
-
+export { MainWindow };
 export default connect(mapStateToProps)(MainWindow);

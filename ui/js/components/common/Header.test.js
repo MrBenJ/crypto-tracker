@@ -18,6 +18,6 @@ describe('<Header> Component Tests', () => {
 
     it('Renders a link to the homepage', () => {
         const HeaderWrapper = setupHeader();
-        expect(HeaderWrapper.find('Link')).toHaveLength(1);
+        expect(HeaderWrapper.find('Link')).toHaveLength(2);
     });
 });

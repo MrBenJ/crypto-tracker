@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import SideBar from './SideBar';
+import { SideBar } from './SideBar';
 
 describe('<SideBar> Tests', () => {
 
@@ -22,5 +22,18 @@ describe('<SideBar> Tests', () => {
             { className: 'my-special-class' }
         );
         expect(wrapper.find('.my-special-class')).toHaveLength(1);
+    });
+
+    it('Renders no-track state if nothing is tracked', () => {
+        const wrapper = createShallowWrapper();
+        expect(wrapper.find('.no-track-zero-state')).toHaveLength(1);
+    });
+
+    it('Renders <SideBarItems> if coins are tracked', () => {
+        const wrapper = createShallowWrapper({
+            tracker: ['btc', 'eth']
+        });
+        expect(wrapper.find('.sidebar-items-container')).toHaveLength(1);
+        
     });
 });
