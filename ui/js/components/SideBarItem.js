@@ -16,6 +16,15 @@ class SideBarItem extends Component {
         super(props);
         this.displayName = 'SideBarItem';
 
+        this.onClick = this.onClick.bind(this);
+
+    }
+
+    onClick() {
+        if(this.props.onClick) {
+            const { prices, coin } = this.props;
+            this.props.onClick(prices.find(coinItem => coinItem.ticker === coin));
+        }
     }
 
     componentDidMount() {
@@ -41,7 +50,7 @@ class SideBarItem extends Component {
         const priceObject = prices.find(coinItem => coinItem.ticker === coin);
         const price = priceObject ? priceObject.usd : 'Loading...';
         return (
-            <div className={style}>
+            <div className={style} onClick={this.onClick}>
                 <Text>{this.props.coin.toUpperCase()}</Text>
                 <Text>Price: {`$ ${price}`}</Text>
                 <button onClick={() => trackerActions.removeCoin(coin)}>Remove {`${coin.toUpperCase()}`}</button>
@@ -68,7 +77,8 @@ SideBarItem.propTypes = {
     coin: PropTypes.string.isRequired,
     trackerActions: PropTypes.object,
     prices: PropTypes.array,
-    priceActions: PropTypes.object
+    priceActions: PropTypes.object,
+    onClick: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideBarItem);

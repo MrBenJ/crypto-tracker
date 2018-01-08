@@ -11,18 +11,22 @@ class IndexPage extends Component {
         super(props);
         this.displayName = 'IndexPage';
 
+        this.state = {
+            coinData: {}
+        }
+
+        this.changeView = this.changeView.bind(this);
+    }
+
+    changeView(data) {
+        this.setState({ coinData: data});
     }
 
     render() {
-
-        // const styles = css`
-
-        // `;
-
         return (
             <div className="clearfix">
-                <SideBar />
-                <MainWindow />
+                <SideBar onItemClick={this.changeView}/>
+                <MainWindow view={this.state.coinData} />
             </div>
         );
     }

@@ -3,7 +3,8 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ConnectedRouter } from 'react-router-redux';
+// import { ConnectedRouter } from 'react-router-redux';
+import { HashRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import { Provider } from 'react-redux';
@@ -22,9 +23,9 @@ const history = createHistory();
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <HashRouter history={history}>
             <App />
-        </ConnectedRouter>
+        </HashRouter>
     </Provider>,
     document.getElementById('app')
 );

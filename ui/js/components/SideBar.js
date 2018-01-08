@@ -21,10 +21,12 @@ class SideBar extends Component {
             width: 20%;
             display: inline-block;
             vertical-align: top;
+            max-height: 500px;
+            overflow-y: scroll;
 
         `;
 
-        const { tracker } = this.props;
+        const { tracker, onItemClick } = this.props;
         let content;
 
         if(!tracker.length) {
@@ -40,7 +42,7 @@ class SideBar extends Component {
                 <div className="sidebar-items-container">
                     {tracker.map( coin => {
                         return (
-                            <SideBarItem key={coin} coin={coin} />
+                            <SideBarItem key={coin} coin={coin} onClick={onItemClick}/>
                         )
                     })}
                 </div>
@@ -61,7 +63,8 @@ SideBar.defaultProps = {
 
 SideBar.propTypes = {
     className: PropTypes.string,
-    tracker: PropTypes.array.isRequired
+    tracker: PropTypes.array.isRequired,
+    onItemClick: PropTypes.func
 };
 
 function mapStateToProps(state) {

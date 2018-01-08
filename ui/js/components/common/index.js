@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import * as commonStyles from 'style/commonStyles';
 
@@ -9,12 +10,13 @@ export function Title({children}) {
 
 Title.propTypes = { children: PropTypes.any.isRequired };
 
-export function Text({children}) {
-    return <p className={commonStyles.TextStyle}>{children}</p>
+export function Text({children, className}) {
+    return <p className={classNames(commonStyles.TextStyle, className)}>{children}</p>
 }
 
 Text.propTypes = {
-    children: PropTypes.any.isRequired
+    children: PropTypes.any.isRequired,
+    className: PropTypes.string
 };
 
 export function Code({children}) {

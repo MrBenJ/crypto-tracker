@@ -46,6 +46,7 @@ class TrackPage extends Component {
             display: inline-block;
             vertical-align: top;
             width: 80%;
+            padding: .5rem;
 
             .untracked-coins-wrapper {
                 display: flex;
@@ -77,7 +78,6 @@ class TrackPage extends Component {
 
         return ( 
             <div className="">
-                <SideBar />
                 <div className={style}>
                     <Text>You are tracking the following coins (Click to remove)</Text>
                     <div className="">
