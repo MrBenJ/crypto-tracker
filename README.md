@@ -1,6 +1,8 @@
 Cryptocurrency Tracking SPA
 ===========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MrBenJ/crypto-tracker.svg)](https://greenkeeper.io/)
+
 Bootstrapped with my own boilerplate, [Not Another React Boilerplate](https://www.github.com/MrBenJ/generator-not-another-react-boilerplate).
 
 
